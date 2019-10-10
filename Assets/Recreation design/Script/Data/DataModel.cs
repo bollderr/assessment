@@ -26,8 +26,6 @@ public static class DataModel  {
 }
 public class Tools
 {
-    /// <summary>
-    /// Get the full path to the data storage file
-    /// </summary>
+    // Get the full path to the data storage file
     public static readonly string dataPath = Application.persistentDataPath + @"\data.bin";
 }

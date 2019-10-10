@@ -41,53 +41,7 @@ public class SquareControl : MonoBehaviour {
         TouchControl();
     }
 
-    //IEnumerator doWhereabouts()
-    //{
-    //    while (true)
-    //    {
-    //        while (!isPause)
-    //        {
-    //            Vector3 pos = transform.position;
-    //            pos.y -= 1;
-    //            transform.position = pos;
-    //            if (!GameManager.instance.IsValidMapPosition(transform))
-    //            {
-    //                AudioManager.instance.PlayDrop();
-    //                pos.y += 1;
-    //                transform.position = pos;
-    //                isPause = true;
-    //                bool isLineclear = GameManager.instance.PlaceShape(transform);
-    //                if (isLineclear)
-    //                {
-    //                    AudioManager.instance.PlayLineClear();
-    //                }
-    //                else
-    //                {
-    //                    AudioManager.instance.PlayControl();
-    //                }
 
-    //                GameManager.instance.FallDown();
-    //                Destroy(this);
-    //            }
-    //            //adjust speed
-    //            if (!isSpeedup)
-    //            {
-    //                yield return new WaitForSeconds(1);
-    //            }
-    //            else
-    //            {
-    //                yield return new WaitForSeconds(0.2f);
-    //            }
-    //        }
-    //        yield return null;
-    //    }
-        
-    //    //while (isSpeedup)
-    //    //{
-    //    //    transform.position = new Vector2(transform.position.x, transform.position.y - 1);
-    //    //    yield return new WaitForSeconds(0.5f);
-    //    //}
-    //}
     void WhereAbouts()
     {
         Vector3 pos = transform.position;
@@ -113,10 +67,8 @@ public class SquareControl : MonoBehaviour {
             Destroy(this);
         }
     }
-    /// <summary>
-    /// Keyboard input control
-    /// </summary>
-    void InputControl() {
+    // Keyboard input control
+     void InputControl() {
         float h = 0;
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || dirType == DirectionType.Left)
         {
@@ -157,9 +109,7 @@ public class SquareControl : MonoBehaviour {
             AudioManager.instance.PlayDrop();
         }
     }
-    /// <summary>
-    /// mouse input control
-    /// </summary>
+    // mouse input control
     void MouseControl() {
         //save initial position when mouse clicked
         if (Input.GetMouseButtonDown(0))
@@ -177,9 +127,7 @@ public class SquareControl : MonoBehaviour {
             m_CtrlInput.Check(Input.mousePosition);
         }
     }
-    /// <summary>
-    /// touch control
-    /// </summary>
+    // touch control
     void TouchControl() {
         if (Input.touchCount == 0) return;
         Touch touch = Input.GetTouch(0);

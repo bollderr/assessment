@@ -2,33 +2,27 @@
 using System.Collections;
 
 public class AudioManager : MonoBehaviour {
-    /// <summary>
-    /// Click
-    /// </summary>
+    
+    // Click
     AudioClip cursor { get; set; }
-    /// <summary>
-    /// Place
-    /// </summary>
+
+    // Place
     AudioClip balloon { get; set; }
-    /// <summary>
-    /// Fall
-    /// </summary>
+
+    // Fall
     AudioClip drop { get; set; }
-    /// <summary>
-    /// Clear
-    /// </summary>
+
+    // Clear
     AudioClip lineclear { get; set; }
-    /// <summary>
-    /// End
-    /// </summary>
+   
+    // End
     AudioClip gameover { get; set; }
 
     AudioSource audioSource1 { get; set; }
     AudioSource audioSource2 { get; set; }
 
-    /// <summary>
-    /// Singleton pattern
-    /// </summary>
+    
+    // Singleton pattern
     public static AudioManager instance;
 
     private void Awake()
@@ -47,49 +41,42 @@ public class AudioManager : MonoBehaviour {
         audioSource1.enabled = audioSource2.enabled = iscan;
     }
 
-    /// <summary>
-    /// Click
-    /// </summary>
+    
+    // Click
     public void PlayCursor()
     {
         PlayAudio2(cursor);
     }
 
-    /// <summary>
-    /// Fall
-    /// </summary>
+    
+    // Fall
     public void PlayDrop()
     {
         PlayAudio1(drop);
     }
 
-    /// <summary>
-    /// Place
-    /// </summary>
+    
+    // Place
     public void PlayControl()
     {
         PlayAudio2(balloon);
     }
 
-    /// <summary>
-    /// Clear
-    /// </summary>
+    
+    // Clear
     public void PlayLineClear()
     {
         PlayAudio2(lineclear);
     }
 
-    /// <summary>
-    /// End
-    /// </summary>
+    
+    // End
     public void PlayGameOver() {
         PlayAudio2(gameover);
     }
 
-    /// <summary>
-    /// Play
-    /// </summary>
-    /// <param name="clip">Audio source</param>
+
+    // Play
     void PlayAudio1(AudioClip clip)
     {
         audioSource1.clip = clip;

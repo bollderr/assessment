@@ -65,39 +65,39 @@
     <Compile Include="Assets\Old design\Scrip\MainMenu.cs" />
     <Compile Include="Assets\Old design\Scrip\Spawner.cs" />
     <Compile Include="Assets\Recreation design\Script\Audio\AudioManager.cs" />
-    <Compile Include="Assets\Recreation design\Script\Author\AuthorCtrl.cs" />
+    <Compile Include="Assets\Recreation design\Script\Author\AuthorControl.cs" />
     <Compile Include="Assets\Recreation design\Script\Author\AuthorView.cs" />
     <Compile Include="Assets\Recreation design\Script\Data\DataModel.cs" />
     <Compile Include="Assets\Recreation design\Script\GameOverPanel\OverCtrl.cs" />
     <Compile Include="Assets\Recreation design\Script\GameOverPanel\OverView.cs" />
     <Compile Include="Assets\Recreation design\Script\Main\GameManager.cs" />
     <Compile Include="Assets\Recreation design\Script\Main\GameView.cs" />
-    <Compile Include="Assets\Recreation design\Script\PasuePanel\PasueCtrl.cs" />
-    <Compile Include="Assets\Recreation design\Script\PasuePanel\PasueView.cs" />
-    <Compile Include="Assets\Recreation design\Script\RankPanel\RankCtrl.cs" />
-    <Compile Include="Assets\Recreation design\Script\RankPanel\RankView.cs" />
-    <Compile Include="Assets\Recreation design\Script\RunPanel\RunCtrl.cs" />
-    <Compile Include="Assets\Recreation design\Script\RunPanel\RunView.cs" />
-    <Compile Include="Assets\Recreation design\Script\SetPanel\SetCtrl.cs" />
-    <Compile Include="Assets\Recreation design\Script\SetPanel\SetView.cs" />
+    <Compile Include="Assets\Recreation design\Script\Pasue\PasueControl.cs" />
+    <Compile Include="Assets\Recreation design\Script\Pasue\PasueView.cs" />
+    <Compile Include="Assets\Recreation design\Script\Rank\RankControl.cs" />
+    <Compile Include="Assets\Recreation design\Script\Rank\RankView.cs" />
+    <Compile Include="Assets\Recreation design\Script\Run\RunControl.cs" />
+    <Compile Include="Assets\Recreation design\Script\Run\RunView.cs" />
+    <Compile Include="Assets\Recreation design\Script\Set\SetControl.cs" />
+    <Compile Include="Assets\Recreation design\Script\Set\SetView.cs" />
     <Compile Include="Assets\Recreation design\Script\Square\SquareControl.cs" />
-    <Compile Include="Assets\Recreation design\Script\StartPanel\StartCtrl.cs" />
-    <Compile Include="Assets\Recreation design\Script\StartPanel\StartView.cs" />
+    <Compile Include="Assets\Recreation design\Script\Start\StartControl.cs" />
+    <Compile Include="Assets\Recreation design\Script\Start\StartView.cs" />
     <Compile Include="Assets\Recreation design\Script\Tools\CtrlInput.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/作业/Teirs/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Homework/Teirs/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/作业/Teirs/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Homework/Teirs/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/作业/Teirs/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Homework/Teirs/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/作业/Teirs/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Homework/Teirs/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/作业/Teirs/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/Homework/Teirs/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity/2018.3.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -301,13 +301,13 @@
       <HintPath>D:/Unity/2018.3.8f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>D:/作业/Teirs/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/Homework/Teirs/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/作业/Teirs/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/Homework/Teirs/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/作业/Teirs/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/Homework/Teirs/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:/Unity/2018.3.8f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

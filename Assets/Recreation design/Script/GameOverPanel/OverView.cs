@@ -3,13 +3,13 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class OverView : MonoBehaviour {
-    public Button Btn_Home { get; set; }
-    public Button Btn_ReStart { get; set; }
+    public Button Home { get; set; }
+    public Button ReStart { get; set; }
     public Text Txt_Curr { get; set; }
     // Use this for initialization
     void Awake () {
-        Btn_Home = transform.Find("Img_Bg/Btn_Home").GetComponent<Button>();
-        Btn_ReStart = transform.Find("Img_Bg/Btn_ReStart").GetComponent<Button>();
+        Home = transform.Find("Img_Bg/Btn_Home").GetComponent<Button>();
+        ReStart = transform.Find("Img_Bg/Btn_ReStart").GetComponent<Button>();
         Txt_Curr = transform.Find("Img_Bg/Txt_Count").GetComponent<Text>();
     }
 

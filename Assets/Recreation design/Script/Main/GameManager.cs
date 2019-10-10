@@ -1,29 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-/// <summary>
-/// PanelType
-/// </summary>
+
+// PanelType
 public enum PanelType {
     StartPanel, RunPanel, SetPanel, RankPanel, GameOverPanel,PasuePanel, AuthorPanel
 }
 
-/// <summary>
-/// BlockType
-/// </summary>
+// BlockType
 public enum SquareType
 {
     Square_1, Square_2, Square_3, Square_4, Square_5, Square_6, Square_7
 }
 
 public class GameManager : MonoBehaviour {
-    public StartCtrl ctrl_start { get; set; }
-    public RunCtrl ctrl_run { get; set; }
-    public SetCtrl ctrl_set { get; set; }
-    public RankCtrl ctrl_rank { get; set; }
-    public OverCtrl ctrl_over { get; set; }
-    public PasueCtrl ctrl_pasue { get; set; }
-    public AuthorCtrl ctrl_author { get; set; }
+    public StartControl Control_start { get; set; }
+    public RunControl Control_run { get; set; }
+    public SetControl Control_set { get; set; }
+    public RankControl Control_rank { get; set; }
+    public OverControl Control_over { get; set; }
+    public PasueControl Control_pasue { get; set; }
+    public AuthorControl Control_author { get; set; }
     public GameView view { get; set; }
 
     public int Score { get; set; }
@@ -51,7 +48,7 @@ public class GameManager : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        if (ctrl_start == null)
+        if (Control_start == null)
         {
             CreatePanel(PanelType.StartPanel);
         }
@@ -66,7 +63,7 @@ public class GameManager : MonoBehaviour {
             if (IsGameOver())
             {
                 //Game end, Pause
-                ctrl_run.isPause = true;
+                Control_run.isPause = true;
                 isOver = true;
             }
         }
@@ -93,11 +90,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    /// <summary>
-    /// Create Panel
-    /// </summary>
-    /// <param name="type"></param>
-    /// <returns></returns>
+    // Create Panel
     public GameObject CreatePanel(PanelType type) {
         GameObject prefab = Resources.Load<GameObject>("Prefab/Panel/" + type);
         if (prefab != null)
@@ -107,25 +100,25 @@ public class GameManager : MonoBehaviour {
             switch (type)
             {
                 case PanelType.StartPanel:
-                    ctrl_start = clone.AddComponent<StartCtrl>();
+                    Control_start = clone.AddComponent<StartControl>();
                     break;
                 case PanelType.RunPanel:
-                    ctrl_run = clone.AddComponent<RunCtrl>();
+                    Control_run = clone.AddComponent<RunControl>();
                     break;
                 case PanelType.SetPanel:
-                    ctrl_set = clone.AddComponent<SetCtrl>();
+                    Control_set = clone.AddComponent<SetControl>();
                     break;
                 case PanelType.RankPanel:
-                    ctrl_rank = clone.AddComponent<RankCtrl>();
+                    Control_rank = clone.AddComponent<RankControl>();
                     break;
                 case PanelType.GameOverPanel:
-                    ctrl_over = clone.AddComponent<OverCtrl>();
+                    Control_over = clone.AddComponent<OverControl>();
                     break;
                 case PanelType.PasuePanel:
-                    ctrl_pasue = clone.AddComponent<PasueCtrl>();
+                    Control_pasue = clone.AddComponent<PasueControl>();
                     break;
                 case PanelType.AuthorPanel:
-                    ctrl_author = clone.AddComponent<AuthorCtrl>();
+                    Control_author = clone.AddComponent<AuthorControl>();
                     break;
             }
             return clone;
@@ -133,11 +126,7 @@ public class GameManager : MonoBehaviour {
         return null;
     }
 
-    /// <summary>
-    /// Creat Block
-    /// </summary>
-    /// <param name="type"></param>
-    /// <returns></returns>
+    // Creat Block
     public GameObject CreateSquare(SquareType type) {
         int indexColor = Random.Range(0, colors.Length);
         GameObject prefab = Resources.Load<GameObject>("Prefab/Square/" + type);
@@ -154,11 +143,7 @@ public class GameManager : MonoBehaviour {
         return null;
     }
 
-    /// <summary>
-    /// Check if the block's place is valid
-    /// </summary>
-    /// <param name="t">Position</param>
-    /// <returns></returns>
+    // Check if the block's place is valid
     public bool IsValidMapPosition(Transform t)
     {
         // Traversing blocks
@@ -175,22 +160,14 @@ public class GameManager : MonoBehaviour {
         return true;
     }
 
-    /// <summary>
-    /// If is in the Map
-    /// </summary>
-    /// <param name="pos"></param>
-    /// <returns></returns>
+    // If is in the Map
     private bool IsInsideMap(Vector2 pos)
     {
         return pos.x >= 0 && pos.x < MAX_COLUMNS && pos.y >= 0;
     }
 
-    /// <summary>
-    /// Place block
-    /// </summary>
-    /// <param name="t"></param>
-    /// <returns></returns>
-    public bool PlaceShape(Transform t)
+    // Place block
+     public bool PlaceShape(Transform t)
     {
         foreach (Transform child in t)
         {
@@ -201,10 +178,7 @@ public class GameManager : MonoBehaviour {
         return CheckMap();
     }
 
-    /// <summary>
-    /// Check Map if need delete row
-    /// </summary>
-    /// <returns></returns>
+    // Check Map if need delete row
     private bool CheckMap()
     {
         int count = 0;
@@ -233,11 +207,7 @@ public class GameManager : MonoBehaviour {
         else return false;
     }
 
-    /// <summary>
-    /// If the row is full
-    /// </summary>
-    /// <param name="row"></param>
-    /// <returns></returns>
+    // If the row is full
     bool CheckIsRowFull(int row)
     {
         for (int i = 0; i < MAX_COLUMNS; i++)
@@ -247,10 +217,7 @@ public class GameManager : MonoBehaviour {
         return true;
     }
 
-    /// <summary>
-    /// DeleteRow
-    /// </summary>
-    /// <param name="row"></param>
+    // DeleteRow
     void DeleteRow(int row)
     {
         for (int i = 0; i < MAX_COLUMNS; i++)
@@ -260,10 +227,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    /// <summary>
-    /// MoveDownRowsAbove
-    /// </summary>
-    /// <param name="row"></param>
+    // MoveDownRowsAbove
     void MoveDownRowsAbove(int row)
     {
         for (int i = row; i < MAX_ROWS; i++)
@@ -272,10 +236,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    /// <summary>
-    /// MoveDownRow
-    /// </summary>
-    /// <param name="row"></param>
+    // MoveDownRow
     void MoveDownRow(int row)
     {
         for (int i = 0; i < MAX_COLUMNS; i++)
@@ -288,15 +249,13 @@ public class GameManager : MonoBehaviour {
             }
         }
     }
-    /// <summary>
-    /// Block fall down
-    /// </summary>
+    // Block fall down
     public void FallDown()
     {
         currentShape = null;
         if (isUpData)
         {
-            ctrl_run.view.SetScoreText(Score, highScore);
+            Control_run.view.SetScoreText(Score, highScore);
         }
         foreach (Transform t in view.CreatePoint)
         {
@@ -307,11 +266,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    /// <summary>
-    /// V3 change to V2
-    /// </summary>
-    /// <param name="v"></param>
-    /// <returns></returns>
+    // V3 change to V2
     public static Vector2 Round(Vector3 v)
     {
         //RoundToInt：Returns rounded to the nearest integer.
@@ -321,10 +276,7 @@ public class GameManager : MonoBehaviour {
     }
 
 
-    /// <summary>
-    /// Whether game is over
-    /// </summary>
-    /// <returns></returns>
+    // Whether game is over
     public bool IsGameOver()
     {
         for (int i = NORMAL_ROWS; i < MAX_ROWS; i++)
@@ -334,10 +286,10 @@ public class GameManager : MonoBehaviour {
                 if (map[j, i] != null)
                 {
                     isOver = true;
-                    ctrl_run.isPause = true;
+                    Control_run.isPause = true;
                     //Loading GameOverPanel
                     CreatePanel(PanelType.GameOverPanel);
-                    ctrl_run.view.SetScoreText(0, highScore);
+                    Control_run.view.SetScoreText(0, highScore);
                     
                     Debug.Log(123 + "<---------->");
                     numbersGame++;
